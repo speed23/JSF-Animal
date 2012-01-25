@@ -9,23 +9,19 @@
 	
     <h:form>
     
-     <h:dataTable value="#{personBean.allPersons}" var="item">
-      <f:facet name="header">#{msg.personAllLabel}</f:facet>
+     <h:dataTable value="#{zooBean.allZoo}" var="item">
+
       
       <h:column>
-        <f:facet name="header">#{msg.personFirstNameLabel}</f:facet>
-        #{item.firstName}
+        <f:facet name="header">#{msg.zooNameLabel}</f:facet>
+        #{item.name}
       </h:column>
-      
-      <h:column>
-        <f:facet name="header">#{msg.personPinLabel}</f:facet>
-        #{item.pin}
-      </h:column>
-      
+
       <h:column>
         <f:facet name="header">#{msg.action}</f:facet>
-        <h:commandLink value="#{msg.actionDelete}" action="#{personBean.deletePerson}"/>
+        <h:commandLink value="#{msg.actionDelete}" action="#{zooBean.deleteZoo}"/>
       </h:column>
+
       
      </h:dataTable>
     </h:form>

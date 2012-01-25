@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+
+	<ui:define name="content">
+
+    <h:form>
+    
+     <h:dataTable value="#{animalBean.allAnimal}" var="item">
+      
+      <h:column>
+        <f:facet name="header">#{msg.animalNameLabel}</f:facet>
+        #{item.name}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.animalKindLabel}</f:facet>
+        #{item.kind}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.animalReleaseYearLabel}</f:facet>
+        #{item.releaseYear}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.animalAgeLabel}</f:facet>
+        #{item.age}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">#{msg.action}</f:facet>
+        <h:commandLink value="#{msg.actionDelete}" action="#{animalBean.deleteAnimal}"/>
+      </h:column>
+
+      
+     </h:dataTable>
+    </h:form>
+      
+	</ui:define>
+
+</ui:composition>
